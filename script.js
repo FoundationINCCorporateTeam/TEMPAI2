@@ -3,7 +3,7 @@ async function generateText() {
     const outputDiv = document.getElementById('output');
 
     const apiKey = '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'; // Your actual API key
-    const model = 'microsoft/DialoGPT-large'; // Use Microsoft's DialoGPT-large model
+    const model = 'microsoft/Phi-3-mini-128k-instruct'; // Use the Microsoft Phi-3-mini-128k-instruct model
 
     if (inputText.trim() === '') {
         outputDiv.innerText = 'Please enter a prompt.';
