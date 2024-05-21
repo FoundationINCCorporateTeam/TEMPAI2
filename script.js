@@ -3,7 +3,7 @@ async function generateText() {
     const outputDiv = document.getElementById('output');
 
     const apiKey = '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'; // Your actual API key
-    const model = 'meta-llama/Llama-2-7b-chat-hf'; // Use a compatible model available in Hugging Face Inference API
+    const model = 'openai-community/gpt2'; // Use a compatible model available in Hugging Face Inference API
 
     if (inputText.trim() === '') {
         outputDiv.innerText = 'Please enter a prompt.';
