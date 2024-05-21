@@ -3,7 +3,7 @@ async function generateText() {
     const outputDiv = document.getElementById('output');
 
     const apiKey = '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'; // Your actual API key
-    const model = 'gpt2'; // Use GPT-2 model available in Hugging Face Inference API
+    const model = 'microsoft/DialoGPT-large'; // Use Microsoft's DialoGPT-large model
 
     if (inputText.trim() === '') {
         outputDiv.innerText = 'Please enter a prompt.';
@@ -21,7 +21,7 @@ async function generateText() {
         body: JSON.stringify({
             inputs: inputText,
             parameters: {
-                max_new_tokens: 50
+                max_new_tokens: 150 // Increase token limit for a longer response
             }
         })
     });
