@@ -2,8 +2,8 @@ async function generateText() {
     const inputText = document.getElementById('inputText').value;
     const outputDiv = document.getElementById('output');
 
-    const apiKey = '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'; // Replace with your actual API key
-    const model = 'TheBloke/Llama-2-7B-Chat-GGML'; // Using a compatible Hugging Face model
+    const apiKey = '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'; // Your actual API key
+    const model = 'meta-llama/Llama-2-7b-chat-hf'; // Use a compatible model available in Hugging Face Inference API
 
     if (inputText.trim() === '') {
         outputDiv.innerText = 'Please enter a prompt.';
@@ -32,5 +32,5 @@ async function generateText() {
     }
 
     const result = await response.json();
-    outputDiv.innerText = result[0]?.generated_text || 'No text generated.';
+    outputDiv.innerText = result.generated_text || 'No text generated.';
 }
