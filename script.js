@@ -3,7 +3,7 @@ async function generateText() {
     const outputDiv = document.getElementById('output');
 
     const apiKey = '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'; // Your actual API key
-    const model = 'openai-community/gpt2'; // Use a compatible model available in Hugging Face Inference API
+    const model = 'gpt2'; // Use GPT-2 model available in Hugging Face Inference API
 
     if (inputText.trim() === '') {
         outputDiv.innerText = 'Please enter a prompt.';
@@ -27,10 +27,11 @@ async function generateText() {
     });
 
     if (!response.ok) {
-        outputDiv.innerText = 'Error generating text.';
+        const error = await response.json();
+        outputDiv.innerText = `Error: ${error.error}`;
         return;
     }
 
     const result = await response.json();
-    outputDiv.innerText = result.generated_text || 'No text generated.';
+    outputDiv.innerText = result[0]?.generated_text || 'No text generated.';
 }
